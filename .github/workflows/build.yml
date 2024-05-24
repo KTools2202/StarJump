@@ -9,7 +9,7 @@ on:
 
 jobs:
   setup-godot:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Godot Setup
         uses: lihop/godot-setup@v2.1.3
