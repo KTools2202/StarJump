@@ -1,0 +1,42 @@
+name: Build Godot Game
+
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  setup-godot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Godot Setup
+        uses: lihop/godot-setup@v2.1.3
+        with:
+          version: 4.2.2-stable # Specify the Godot version you want to use
+          bits: 64 # Optional, default is 64
+          mono: false # Optional, set to true if using the Mono build
+          alias: godot # Optional, default is godot
+          cache: true # Optional, default is true
+          export-templates: false # Optional, set to true if you need export templates
+          github-token: ${{ github.token }} # Optional, default is ${{ github.token }}
+
+      - name: Build Godot
+        uses: yeslayla/build-godot-action@v1.4.1
+        with:
+          name: StarJump # Specify the name of the exported binary
+          preset: "Game Entry" # Specify the name of the preset in `export_presets.cfg` to use
+          subdirectory: "" # Optional, default is an empty string
+          package: true # Optional, set to true to output an artifact zip file
+          projectDir: build # Optional, default is .
+          debugMode: true # Optional, specify true or false to use `--export-debug`
+
+      - name: Godot Build Info
+        uses: robpc/godot-build-info-action@v1.0
+        with:
+          version: 1.0.0 # Specify package version
+          commit: ${{ github.sha }} # Specify the commit hash
+          build_date: ${{ github.run_date }} # Specify the build date/time
+          file: override.cfg # Specify the file to add the overrides
+
