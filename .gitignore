@@ -1,1 +1,4 @@
+# Godot 4+ specific ignores
 .godot/
+# Python files (used to work as a Python game)
+.py
