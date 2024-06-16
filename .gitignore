@@ -3,5 +3,5 @@
 # Python files (used to work as a Python game)
 .py
 # ignore work in progress sprites
-sprites/.psd
-sprites/.aseprite
+*.psd
+*.aseprite
