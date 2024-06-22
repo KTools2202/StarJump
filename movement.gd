@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Sprite2D
 
 # Declare member variables here
 var velocity = Vector2()
@@ -6,7 +6,11 @@ var speed = 200
 
 # Called when the node enters the scene tree for the first time
 func _ready():
-	pass # Replace with function body
+	# Load the image as a Texture
+	var texture = load(image_path)
+	
+	# Assign the texture to the Sprite
+	self.texture = texture
 
 # Called every frame. 'delta' is the elapsed time since the previous frame
 func _process(delta):
