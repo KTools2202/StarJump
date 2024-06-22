@@ -1,9 +1,8 @@
 extends CharacterBody2D
 
 # Declare member variables here
-var velocity = Vector2()
 var speed = 200
-var image_path = "res://path/to/your/image.png"
+var image_path = "res://sprites/Astronaut Sprite 1.png"
 
 # Called when the node enters the scene tree for the first time
 func _ready():
@@ -22,6 +21,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame
 func _process(delta):
+	# Reset the built-in velocity each frame
 	velocity = Vector2()
 
 	if Input.is_action_pressed("ui_right"):
@@ -37,5 +37,5 @@ func _process(delta):
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 
-	# Move the character
+	# Move the character using the built-in velocity property
 	move_and_slide()
