@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://dgdhq7qt34stf"]
+[gd_scene load_steps=3 format=3 uid="uid://dgdhq7qt34stf"]
+
+[ext_resource type="Texture2D" uid="uid://cp83nypys7h3q" path="res://sprites/Astronaut Sprite 1.png" id="1_gvsao"]
+[ext_resource type="Texture2D" uid="uid://toe026ssss2b" path="res://sprites/Astronaut Sprite 1 fire.png" id="2_dde7m"]
 
 [node name="Sprite2D" type="Sprite2D"]
+
+[node name="AstronautSprite1" type="Sprite2D" parent="."]
+position = Vector2(878, 169)
+texture = ExtResource("1_gvsao")
+
+[node name="AstronautSprite1Fire" type="Sprite2D" parent="."]
+position = Vector2(650, 438)
+texture = ExtResource("2_dde7m")
