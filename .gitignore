@@ -7,5 +7,5 @@
 *.aseprite
 # Import file ignores
 sprites/*.import
-* Godot EXE path ignore for VSCode
+# Godot EXE path ignore for VSCode
 .vscode/settings.json
