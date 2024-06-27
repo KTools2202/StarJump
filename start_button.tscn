@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://dsem0absfdrfd"]
+[gd_scene load_steps=3 format=3 uid="uid://dsem0absfdrfd"]
+
+[ext_resource type="Texture2D" uid="uid://c4tao2repn1js" path="res://sprites/Start button unclicked.png" id="1_u3ucj"]
+[ext_resource type="Texture2D" uid="uid://dns1ypi8jewkx" path="res://sprites/Start button clicked.png" id="2_32y8s"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,6 +17,10 @@ grow_vertical = 2
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_right = 311.0
-offset_bottom = 126.0
+offset_left = 8.0
+offset_top = -242.0
+offset_right = 264.0
+offset_bottom = -114.0
 action_mode = 0
+texture_normal = ExtResource("1_u3ucj")
+texture_pressed = ExtResource("2_32y8s")
