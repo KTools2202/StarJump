@@ -1,5 +1,7 @@
 extends TextureButton
 
+
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	# Access the TextureButton node
 	var button_node = "../TextureButton"  # Assumes TextureButton is a child node of Control
@@ -11,13 +13,7 @@ func _ready():
 	else:
 		print("TextureButton node not found or accessible.")
 
-func _on_button_pressed():
-	print("Button pressed!")
-	change_scene("res://scenes/sprite_2d.tscn")
 
-func change_scene(scene_path):
-	var next_scene = load_scene(scene_path)
-	get_tree().set_current_scene(next_scene)
-
-func load_scene(scene_path):
-	return load(scene_path).instantiate()
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass

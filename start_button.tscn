@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c4tao2repn1js" path="res://sprites/Start button unclicked.png" id="1_u3ucj"]
 [ext_resource type="Texture2D" uid="uid://dns1ypi8jewkx" path="res://sprites/Start button clicked.png" id="2_32y8s"]
-[ext_resource type="Script" path="res://scripts/scene_transition.gd" id="3_cusj1"]
+[ext_resource type="Script" path="res://scripts/start_button.gd" id="3_h1xgs"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -15,7 +15,6 @@ offset_right = -427.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("3_cusj1")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -26,3 +25,4 @@ offset_bottom = -114.0
 action_mode = 0
 texture_normal = ExtResource("1_u3ucj")
 texture_pressed = ExtResource("2_32y8s")
+script = ExtResource("3_h1xgs")
