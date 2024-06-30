@@ -6,7 +6,7 @@ func _ready():
 
 func load_scene(scene_path):
 	# Load the new scene
-	var new_scene = load(scene_path).instantiate()
+	var new_scene = load(scene_path).instance()
 	
 	# Get the current scene (the first child of the root)
 	var current_scene = get_tree().root.get_child(0)
