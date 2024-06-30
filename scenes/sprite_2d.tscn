@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgdhq7qt34stf"]
 
-[ext_resource type="Texture2D" uid="uid://cp83nypys7h3q" path="res://sprites/Astronaut Sprite 1.png" id="1_gvsao"]
+[ext_resource type="Texture2D" uid="uid://cp83nypys7h3q" path="res://sprites/Astronaut Sprite 1.png" id="1_y8sdv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3myi4"]
 size = Vector2(252, 276)
@@ -13,4 +13,4 @@ size = Vector2(252, 276)
 shape = SubResource("RectangleShape2D_3myi4")
 
 [node name="AstronautSprite1" type="Sprite2D" parent="Player"]
-texture = ExtResource("1_gvsao")
+texture = ExtResource("1_y8sdv")
