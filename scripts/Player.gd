@@ -28,5 +28,5 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
 
 	# Move and slide with floor normal
-	#move_and_slide()
+	move_and_slide()
 
