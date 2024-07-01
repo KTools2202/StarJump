@@ -20,6 +20,22 @@ position = Vector2(1003, 509.476)
 scale = Vector2(0.460317, 0.460317)
 texture = ExtResource("1_y8sdv")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Clue1" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue1"]
+
+[node name="Clue2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue2"]
+
+[node name="Clue3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue3"]
+
+[node name="Clue4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue4"]
+
+[node name="Clue5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue5"]
