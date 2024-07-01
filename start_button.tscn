@@ -15,6 +15,7 @@ offset_right = -427.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_hxyaj")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -25,4 +26,3 @@ offset_bottom = -114.0
 action_mode = 0
 texture_normal = ExtResource("1_u3ucj")
 texture_pressed = ExtResource("2_32y8s")
-script = ExtResource("3_hxyaj")

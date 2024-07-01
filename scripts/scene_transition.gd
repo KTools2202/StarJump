@@ -1,8 +1,8 @@
-extends TextureButton
+extends Control
 
 func _ready():
 	# Access the TextureButton node
-	var button_node = "../TextureButton"  # Assumes TextureButton is a child node of Control
+	var button_node = $TextureButton  # Assumes TextureButton is a child node of Control
 	
 	# Check if button_node is valid before connecting
 	if button_node:
@@ -13,11 +13,11 @@ func _ready():
 
 func _on_button_pressed():
 	print("Button pressed!")
-	change_scene("res://scenes/sprite_2d.tscn")
+	get_tree().change_scene_to_file("res://scenes/sprite_2d.tscn")
 
-func change_scene(scene_path):
-	var next_scene = load_scene(scene_path)
-	get_tree().set_current_scene(next_scene)
+#func change_scene(scene_path):
+	#var next_scene = load_scene(scene_path)
+	#get_tree().set_current_scene(next_scene)
 
-func load_scene(scene_path):
-	return load(scene_path).instantiate()
+#func load_scene(scene_path):
+	#return load(scene_path).instantiate()
