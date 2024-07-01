@@ -14,10 +14,3 @@ func _ready():
 func _on_button_pressed():
 	print("Button pressed!")
 	get_tree().change_scene_to_file("res://scenes/sprite_2d.tscn")
-
-#func change_scene(scene_path):
-	#var next_scene = load_scene(scene_path)
-	#get_tree().set_current_scene(next_scene)
-
-#func load_scene(scene_path):
-	#return load(scene_path).instantiate()
