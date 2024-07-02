@@ -3,7 +3,7 @@ extends Control
 var callback = null
 
 func _ready():
-	$Button.connect("pressed", Callable(self, "_on_ok_button_pressed"))
+	$Panel/Button.connect("pressed", Callable(self, "_on_ok_button_pressed"))
 	hide()  # Start hidden
 
 func show_message(title, body, callback_func = null):

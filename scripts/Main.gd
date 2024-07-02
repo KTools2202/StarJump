@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var checkpoint_gui = preload("res://scenes/checkpoint.tscn").instance()
+@onready var checkpoint_gui = preload("res://scenes/checkpoint.tscn").instance()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_scene("res://scenes/start_button.tscn")
