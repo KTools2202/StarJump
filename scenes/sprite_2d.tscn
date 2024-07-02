@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgdhq7qt34stf"]
+[gd_scene load_steps=12 format=3 uid="uid://dgdhq7qt34stf"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_ru7ag"]
 [ext_resource type="Texture2D" uid="uid://cp83nypys7h3q" path="res://sprites/Astronaut Sprite 1.png" id="1_y8sdv"]
 [ext_resource type="Script" path="res://scripts/clues/Clue1.gd" id="3_06nre"]
+[ext_resource type="Script" path="res://scripts/clues/labels/Clue1_Label.gd" id="4_boi52"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3myi4"]
 size = Vector2(116, 127)
@@ -52,6 +53,7 @@ offset_left = 78.0
 offset_top = 29.0
 offset_right = 293.0
 offset_bottom = 52.0
+script = ExtResource("4_boi52")
 
 [node name="Clue2" type="Area2D" parent="."]
 position = Vector2(549, 75)
