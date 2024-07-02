@@ -38,14 +38,76 @@ position = Vector2(1003, 509.476)
 scale = Vector2(0.460317, 0.460317)
 texture = ExtResource("1_y8sdv")
 
-[node name="ClueMenu" type="Control" parent="."]
+[node name="Clue1" type="Area2D" parent="."]
+position = Vector2(198, 31)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue1"]
+position = Vector2(37, 40)
+shape = SubResource("CircleShape2D_agvig")
+
+[node name="Label" type="Label" parent="Clue1"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Clue2" type="Area2D" parent="."]
+position = Vector2(549, 75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue2"]
+position = Vector2(54, 18)
+shape = SubResource("CircleShape2D_wofwh")
+
+[node name="Label" type="Label" parent="Clue2"]
+visible = false
+offset_left = 94.0
+offset_top = 5.0
+offset_right = 134.0
+offset_bottom = 28.0
+
+[node name="Clue3" type="Area2D" parent="."]
+position = Vector2(296, 468)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue3"]
+position = Vector2(44, 44)
+shape = SubResource("CircleShape2D_3rrcl")
+
+[node name="Label" type="Label" parent="Clue3"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Clue4" type="Area2D" parent="."]
+position = Vector2(718, 461)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue4"]
+position = Vector2(55, 38)
+shape = SubResource("CircleShape2D_eo4rb")
+
+[node name="Label" type="Label" parent="Clue4"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Clue5" type="Area2D" parent="."]
+position = Vector2(945, 57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue5"]
+position = Vector2(46, 23)
+shape = SubResource("CircleShape2D_ohvj2")
+
+[node name="Label" type="Label" parent="Clue5"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AnswerGUI" type="Control" parent="."]
 visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Panel" type="Panel" parent="ClueMenu"]
+[node name="Panel" type="Panel" parent="AnswerGUI"]
 visible = false
 layout_mode = 0
 offset_left = 79.0
@@ -53,7 +115,7 @@ offset_top = 19.0
 offset_right = 1076.0
 offset_bottom = 636.0
 
-[node name="Label" type="Label" parent="ClueMenu/Panel"]
+[node name="Label" type="Label" parent="AnswerGUI/Panel"]
 visible = false
 layout_mode = 0
 offset_left = 231.0
@@ -64,7 +126,7 @@ text = "CLUE GET!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Body" type="Label" parent="ClueMenu/Panel"]
+[node name="Body" type="Label" parent="AnswerGUI/Panel"]
 visible = false
 layout_mode = 0
 offset_left = 14.0
@@ -75,7 +137,7 @@ text = "This star allows us to see during the day!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="OK" type="Button" parent="ClueMenu/Panel"]
+[node name="Ans1" type="Button" parent="AnswerGUI/Panel"]
 visible = false
 layout_mode = 0
 offset_left = 391.0
@@ -84,41 +146,6 @@ offset_right = 614.0
 offset_bottom = 566.0
 tooltip_text = "Click to close this menu."
 text = "OK"
-
-[node name="Clue1" type="Area2D" parent="."]
-position = Vector2(198, 31)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue1"]
-position = Vector2(37, 40)
-shape = SubResource("CircleShape2D_agvig")
-
-[node name="Clue2" type="Area2D" parent="."]
-position = Vector2(549, 75)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue2"]
-position = Vector2(54, 18)
-shape = SubResource("CircleShape2D_wofwh")
-
-[node name="Clue3" type="Area2D" parent="."]
-position = Vector2(296, 468)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue3"]
-position = Vector2(44, 44)
-shape = SubResource("CircleShape2D_3rrcl")
-
-[node name="Clue4" type="Area2D" parent="."]
-position = Vector2(718, 461)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue4"]
-position = Vector2(55, 38)
-shape = SubResource("CircleShape2D_eo4rb")
-
-[node name="Clue5" type="Area2D" parent="."]
-position = Vector2(945, 57)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue5"]
-position = Vector2(46, 23)
-shape = SubResource("CircleShape2D_ohvj2")
 
 [node name="answer" type="Area2D" parent="."]
 position = Vector2(-12, 236)
