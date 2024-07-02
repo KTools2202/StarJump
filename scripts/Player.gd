@@ -29,4 +29,3 @@ func _physics_process(delta):
 
 	# Move and slide with floor normal
 	move_and_slide()
-
