@@ -6,7 +6,7 @@ func _ready():
 	load_scene("res://scenes/start_button.tscn")
 	add_child(checkpoint_gui)
 
-	# Assuming you have multiple checkpoints
+	# Using this logic for multiple "checkpoints"
 	for checkpoint in get_tree().get_nodes_in_group("checkpoints"):
 		checkpoint.connect("checkpoint_reached", Callable(self, "_on_checkpoint_reached"))
 

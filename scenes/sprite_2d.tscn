@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgdhq7qt34stf"]
+[gd_scene load_steps=11 format=3 uid="uid://dgdhq7qt34stf"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_ru7ag"]
 [ext_resource type="Texture2D" uid="uid://cp83nypys7h3q" path="res://sprites/Astronaut Sprite 1.png" id="1_y8sdv"]
+[ext_resource type="Script" path="res://scripts/clues/Clue1.gd" id="3_06nre"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3myi4"]
 size = Vector2(116, 127)
@@ -40,15 +41,17 @@ texture = ExtResource("1_y8sdv")
 
 [node name="Clue1" type="Area2D" parent="."]
 position = Vector2(198, 31)
+script = ExtResource("3_06nre")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue1"]
 position = Vector2(37, 40)
 shape = SubResource("CircleShape2D_agvig")
 
 [node name="Label" type="Label" parent="Clue1"]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 78.0
+offset_top = 29.0
+offset_right = 293.0
+offset_bottom = 52.0
 
 [node name="Clue2" type="Area2D" parent="."]
 position = Vector2(549, 75)
@@ -101,11 +104,10 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="AnswerGUI" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 46.0
+offset_bottom = 44.0
 
 [node name="Panel" type="Panel" parent="AnswerGUI"]
 visible = false
@@ -148,10 +150,11 @@ tooltip_text = "Click to close this menu."
 text = "OK"
 
 [node name="answer" type="Area2D" parent="."]
-position = Vector2(-12, 236)
+position = Vector2(37, 240)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="answer"]
-position = Vector2(23, 64)
+position = Vector2(-26, 66)
 shape = SubResource("RectangleShape2D_wmj16")
 
 [connection signal="body_entered" from="Clue1" to="Clue1" method="_on_body_entered"]
+[connection signal="body_exited" from="Clue1" to="Clue1" method="_on_body_exited"]
