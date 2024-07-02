@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://b465ndyypxoc4"]
+
+[ext_resource type="Script" path="res://scripts/clues/ClueMenu.gd" id="1_mfgos"]
+[ext_resource type="Script" path="res://scripts/clues/Clue1.gd" id="2_rik6i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8iqn8"]
+radius = 31.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5wl4l"]
+radius = 36.0555
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5plmp"]
+radius = 41.3038
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3c6uc"]
+radius = 35.5106
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ajib0"]
+radius = 39.4588
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ic4qh"]
+size = Vector2(20, 100)
+
+[node name="Checkpoint" type="Node2D"]
+
+[node name="ClueMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_mfgos")
+
+[node name="Panel" type="Panel" parent="ClueMenu"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 18.0
+offset_right = 1060.0
+offset_bottom = 635.0
+
+[node name="Label" type="Label" parent="ClueMenu"]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 51.0
+offset_right = 863.0
+offset_bottom = 149.0
+text = "CLUE GET!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ClueMenu"]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 27.0
+offset_right = 391.0
+offset_bottom = 35.0
+
+[node name="Clue1" type="Area2D" parent="."]
+position = Vector2(198, 31)
+script = ExtResource("2_rik6i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue1"]
+position = Vector2(37, 40)
+shape = SubResource("CircleShape2D_8iqn8")
+
+[node name="Clue2" type="Area2D" parent="."]
+position = Vector2(549, 75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue2"]
+position = Vector2(54, 18)
+shape = SubResource("CircleShape2D_5wl4l")
+
+[node name="Clue3" type="Area2D" parent="."]
+position = Vector2(296, 468)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue3"]
+position = Vector2(44, 44)
+shape = SubResource("CircleShape2D_5plmp")
+
+[node name="Clue4" type="Area2D" parent="."]
+position = Vector2(718, 461)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue4"]
+position = Vector2(55, 38)
+shape = SubResource("CircleShape2D_3c6uc")
+
+[node name="Clue5" type="Area2D" parent="."]
+position = Vector2(945, 57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue5"]
+position = Vector2(46, 23)
+shape = SubResource("CircleShape2D_ajib0")
+
+[node name="answer" type="Area2D" parent="."]
+position = Vector2(-12, 236)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="answer"]
+position = Vector2(23, 64)
+shape = SubResource("RectangleShape2D_ic4qh")
+
+[connection signal="body_entered" from="Clue1" to="Clue1" method="_on_body_entered"]
