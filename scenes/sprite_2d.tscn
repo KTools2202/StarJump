@@ -1,9 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgdhq7qt34stf"]
+[gd_scene load_steps=10 format=3 uid="uid://dgdhq7qt34stf"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_ru7ag"]
 [ext_resource type="Texture2D" uid="uid://cp83nypys7h3q" path="res://sprites/Astronaut Sprite 1.png" id="1_y8sdv"]
-[ext_resource type="Script" path="res://scripts/clues/Clue1.gd" id="3_caovi"]
-[ext_resource type="Script" path="res://scripts/clues/ClueMenu.gd" id="3_t2jdh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3myi4"]
 size = Vector2(116, 127)
@@ -41,13 +39,14 @@ scale = Vector2(0.460317, 0.460317)
 texture = ExtResource("1_y8sdv")
 
 [node name="ClueMenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("3_t2jdh")
 
 [node name="Panel" type="Panel" parent="ClueMenu"]
+visible = false
 layout_mode = 0
 offset_left = 79.0
 offset_top = 19.0
@@ -55,6 +54,7 @@ offset_right = 1076.0
 offset_bottom = 636.0
 
 [node name="Label" type="Label" parent="ClueMenu/Panel"]
+visible = false
 layout_mode = 0
 offset_left = 231.0
 offset_top = 33.0
@@ -65,6 +65,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Body" type="Label" parent="ClueMenu/Panel"]
+visible = false
 layout_mode = 0
 offset_left = 14.0
 offset_top = 132.0
@@ -75,6 +76,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="OK" type="Button" parent="ClueMenu/Panel"]
+visible = false
 layout_mode = 0
 offset_left = 391.0
 offset_top = 508.0
@@ -85,7 +87,6 @@ text = "OK"
 
 [node name="Clue1" type="Area2D" parent="."]
 position = Vector2(198, 31)
-script = ExtResource("3_caovi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue1"]
 position = Vector2(37, 40)

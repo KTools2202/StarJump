@@ -8,4 +8,4 @@ func _ready():
 
 func _on_body_entered(body):
 	if body is CharacterBody2D:  # Assuming the player character extends CharacterBody2D
-		emit_signal("checkpoint_reached")
+		print("Test clue")
