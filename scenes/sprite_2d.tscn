@@ -1,10 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgdhq7qt34stf"]
+[gd_scene load_steps=9 format=3 uid="uid://dgdhq7qt34stf"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_ru7ag"]
 [ext_resource type="Texture2D" uid="uid://cp83nypys7h3q" path="res://sprites/Astronaut Sprite 1.png" id="1_y8sdv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3myi4"]
 size = Vector2(116, 127)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_agvig"]
+radius = 31.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wofwh"]
+radius = 36.0555
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rrcl"]
+radius = 41.3038
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eo4rb"]
+radius = 35.5106
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ohvj2"]
+radius = 39.4588
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,19 +38,29 @@ texture = ExtResource("1_y8sdv")
 [node name="Clue1" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue1"]
+position = Vector2(285, 47)
+shape = SubResource("CircleShape2D_agvig")
 
 [node name="Clue2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue2"]
+position = Vector2(716, 91)
+shape = SubResource("CircleShape2D_wofwh")
 
 [node name="Clue3" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue3"]
+position = Vector2(138, 473)
+shape = SubResource("CircleShape2D_3rrcl")
 
 [node name="Clue4" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue4"]
+position = Vector2(549, 587)
+shape = SubResource("CircleShape2D_eo4rb")
 
 [node name="Clue5" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue5"]
+position = Vector2(1026, 56)
+shape = SubResource("CircleShape2D_ohvj2")
