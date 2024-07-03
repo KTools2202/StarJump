@@ -6,7 +6,7 @@
 *.psd
 *.aseprite
 # Import file ignores
-sprites/*.import
+*.import
 # Godot EXE path ignore for VSCode
 .vscode/settings.json
 # If someone decides to place the Godot exe in "for convenience" I suppose

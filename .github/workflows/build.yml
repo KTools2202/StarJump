@@ -2,13 +2,33 @@ name: Build Godot Game
 
 on: 
   push:
-    branches: [ main ]
+    branches: [ develop ]
+    paths:
+      - "scenes/**"
+      - "scripts/**"
+      - "sprites/**"
+      - "Main.tscn"
+      - "project.godot"
+      #- "ans/answers.json"
+      # Uncomment when we get to this stage.
   pull_request:
-    branches: [ main ]
+    branches: [ develop ]
+        paths:
+      - "scenes/**"
+      - "scripts/**"
+      - "sprites/**"
+      - "Main.tscn"
+      - "project.godot"
+      #- "ans/answers.json"
+      # Uncomment when we get to this stage.
   workflow_dispatch:
+  
+permissions:
+  contents: read
 
 jobs:
-  setup-godot:
+  godot-build:
+    name: Build Godot game
     runs-on: ubuntu-latest
     steps:
       - name: Godot Setup
@@ -26,11 +46,17 @@ jobs:
         uses: yeslayla/build-godot-action@v1.4.1
         with:
           name: StarJump # Specify the name of the exported binary
-          preset: "Game Entry" # Specify the name of the preset in `export_presets.cfg` to use
+          preset: "Windows Desktop" # Specify the name of the preset in `export_presets.cfg` to use
           subdirectory: "" # Optional, default is an empty string
           package: true # Optional, set to true to output an artifact zip file
           projectDir: build # Optional, default is .
           debugMode: true # Optional, specify true or false to use `--export-debug`
+          
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: StarJump build artifact
+          path: build
 
       - name: Godot Build Info
         uses: robpc/godot-build-info-action@v1.0
