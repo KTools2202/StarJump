@@ -14,7 +14,7 @@ on:
       # Uncomment when we get to this stage.
   pull_request:
     branches: [ develop ]
-        paths:
+    paths:
       - "scenes/**"
       - "scripts/**"
       - "sprites/**"
