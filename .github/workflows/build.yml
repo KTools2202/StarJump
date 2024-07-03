@@ -46,7 +46,7 @@ jobs:
         uses: yeslayla/build-godot-action@v1.4.1
         with:
           name: StarJump # Specify the name of the exported binary
-          preset: "Windows Desktop" # Specify the name of the preset in `export_presets.cfg` to use
+          preset: "StarJump Windows EXE" # Specify the name of the preset in `export_presets.cfg` to use
           subdirectory: "" # Optional, default is an empty string
           package: true # Optional, set to true to output an artifact zip file
           projectDir: build # Optional, default is .
