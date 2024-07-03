@@ -1,6 +1,7 @@
 name: Build Godot Game
 
 on: 
+  workflow_dispatch:
   push:
     branches: [ develop ]
     paths:
@@ -21,7 +22,6 @@ on:
       - "project.godot"
       #- "ans/answers.json"
       # Uncomment when we get to this stage.
-  workflow_dispatch:
   
 permissions:
   contents: read
