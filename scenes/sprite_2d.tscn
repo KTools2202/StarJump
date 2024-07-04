@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_ru7ag"]
 [ext_resource type="Texture2D" uid="uid://cp83nypys7h3q" path="res://sprites/Astronaut Sprite 1.png" id="1_y8sdv"]
-[ext_resource type="Script" path="res://scripts/clues/Clue1.gd" id="3_06nre"]
+[ext_resource type="Script" path="res://scripts/Stage1/Clue1.gd" id="3_06nre"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3myi4"]
 size = Vector2(116, 127)
@@ -48,7 +48,6 @@ position = Vector2(37, 40)
 shape = SubResource("CircleShape2D_agvig")
 
 [node name="Label" type="Label" parent="Clue1"]
-visible = false
 offset_left = 78.0
 offset_top = 29.0
 offset_right = 293.0
@@ -62,7 +61,6 @@ position = Vector2(54, 18)
 shape = SubResource("CircleShape2D_wofwh")
 
 [node name="Label" type="Label" parent="Clue2"]
-visible = false
 offset_left = 94.0
 offset_top = 5.0
 offset_right = 134.0
@@ -76,7 +74,6 @@ position = Vector2(44, 44)
 shape = SubResource("CircleShape2D_3rrcl")
 
 [node name="Label" type="Label" parent="Clue3"]
-visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 
@@ -88,7 +85,6 @@ position = Vector2(55, 38)
 shape = SubResource("CircleShape2D_eo4rb")
 
 [node name="Label" type="Label" parent="Clue4"]
-visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 
@@ -100,7 +96,6 @@ position = Vector2(46, 23)
 shape = SubResource("CircleShape2D_ohvj2")
 
 [node name="Label" type="Label" parent="Clue5"]
-visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 
