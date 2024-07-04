@@ -13,4 +13,4 @@ func _ready():
 
 func _on_button_pressed():
 	print("Button pressed!")
-	get_tree().change_scene_to_file("res://scenes/sprite_2d.tscn")
+	get_tree().change_scene_to_file("res://scenes/stages/stage1.tscn")

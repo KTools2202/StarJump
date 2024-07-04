@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://dgdhq7qt34stf"]
 
-[ext_resource type="Script" path="res://scripts/Player.gd" id="1_ru7ag"]
-[ext_resource type="Texture2D" uid="uid://cp83nypys7h3q" path="res://sprites/Astronaut Sprite 1.png" id="1_y8sdv"]
-[ext_resource type="Script" path="res://scripts/Stage1/Clue1.gd" id="3_06nre"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_4dh24"]
+[ext_resource type="Texture2D" uid="uid://cp83nypys7h3q" path="res://sprites/Astronaut Sprite 1.png" id="2_gthq2"]
+[ext_resource type="Script" path="res://scripts/Stage1/Clue1.gd" id="3_rns28"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3myi4"]
 size = Vector2(116, 127)
@@ -28,7 +28,7 @@ size = Vector2(42, 100)
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
-script = ExtResource("1_ru7ag")
+script = ExtResource("1_4dh24")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(1003, 509.5)
@@ -37,11 +37,11 @@ shape = SubResource("RectangleShape2D_3myi4")
 [node name="AstronautSprite1" type="Sprite2D" parent="Player"]
 position = Vector2(1003, 509.476)
 scale = Vector2(0.460317, 0.460317)
-texture = ExtResource("1_y8sdv")
+texture = ExtResource("2_gthq2")
 
 [node name="Clue1" type="Area2D" parent="."]
 position = Vector2(198, 31)
-script = ExtResource("3_06nre")
+script = ExtResource("3_rns28")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue1"]
 position = Vector2(37, 40)
