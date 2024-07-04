@@ -2,3 +2,9 @@
 .godot/
 # Python files (used to work as a Python game)
 .py
+# Ignore VSCode settings for Godot EXE
+.vscode/settings.json
+# Ignore imports
+*.import
+# Ignore test builds
+[Bb]uild/*
