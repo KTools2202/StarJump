@@ -23,7 +23,7 @@ radius = 35.5106
 radius = 39.4588
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmj16"]
-size = Vector2(20, 100)
+size = Vector2(42, 100)
 
 [node name="Node2D" type="Node2D"]
 
@@ -99,21 +99,21 @@ shape = SubResource("CircleShape2D_ohvj2")
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="AnswerGUI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 46.0
-offset_bottom = 44.0
+[node name="answer" type="Area2D" parent="."]
+position = Vector2(37, 240)
 
-[node name="Panel" type="Panel" parent="AnswerGUI"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="answer"]
+position = Vector2(-37, 66)
+shape = SubResource("RectangleShape2D_wmj16")
+
+[node name="Panel" type="Panel" parent="answer"]
 visible = false
-layout_mode = 0
-offset_left = 79.0
-offset_top = 19.0
-offset_right = 1076.0
-offset_bottom = 636.0
+offset_left = 42.0
+offset_top = -221.0
+offset_right = 1039.0
+offset_bottom = 396.0
 
-[node name="Label" type="Label" parent="AnswerGUI/Panel"]
+[node name="Label" type="Label" parent="answer/Panel"]
 visible = false
 layout_mode = 0
 offset_left = 231.0
@@ -124,7 +124,7 @@ text = "CLUE GET!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Body" type="Label" parent="AnswerGUI/Panel"]
+[node name="Body" type="Label" parent="answer/Panel"]
 visible = false
 layout_mode = 0
 offset_left = 14.0
@@ -135,7 +135,7 @@ text = "This star allows us to see during the day!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Ans1" type="Button" parent="AnswerGUI/Panel"]
+[node name="Ans1" type="Button" parent="answer/Panel"]
 visible = false
 layout_mode = 0
 offset_left = 391.0
@@ -144,13 +144,6 @@ offset_right = 614.0
 offset_bottom = 566.0
 tooltip_text = "Click to close this menu."
 text = "OK"
-
-[node name="answer" type="Area2D" parent="."]
-position = Vector2(37, 240)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="answer"]
-position = Vector2(-26, 66)
-shape = SubResource("RectangleShape2D_wmj16")
 
 [connection signal="body_entered" from="Clue1" to="Clue1" method="_on_body_entered"]
 [connection signal="body_exited" from="Clue1" to="Clue1" method="_on_body_exited"]
