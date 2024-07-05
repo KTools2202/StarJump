@@ -117,43 +117,60 @@ position = Vector2(-37, 66)
 shape = SubResource("RectangleShape2D_wmj16")
 
 [node name="Panel" type="Panel" parent="answer"]
-visible = false
 offset_left = 42.0
 offset_top = -221.0
 offset_right = 1039.0
 offset_bottom = 396.0
 
 [node name="Label" type="Label" parent="answer/Panel"]
-visible = false
 layout_mode = 0
-offset_left = 231.0
-offset_top = 33.0
-offset_right = 800.0
-offset_bottom = 131.0
-text = "CLUE GET!"
+offset_left = 220.0
+offset_top = 27.0
+offset_right = 789.0
+offset_bottom = 125.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Body" type="Label" parent="answer/Panel"]
-visible = false
 layout_mode = 0
 offset_left = 14.0
 offset_top = 132.0
 offset_right = 981.0
 offset_bottom = 417.0
-text = "This star allows us to see during the day!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Ans1" type="Button" parent="answer/Panel"]
-visible = false
 layout_mode = 0
-offset_left = 391.0
-offset_top = 508.0
-offset_right = 614.0
-offset_bottom = 566.0
+offset_left = 524.0
+offset_top = 544.0
+offset_right = 747.0
+offset_bottom = 602.0
 tooltip_text = "Click to close this menu."
-text = "OK"
+
+[node name="Ans2" type="Button" parent="answer/Panel"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 542.0
+offset_right = 453.0
+offset_bottom = 600.0
+tooltip_text = "Click to close this menu."
+
+[node name="Ans3" type="Button" parent="answer/Panel"]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 456.0
+offset_right = 744.0
+offset_bottom = 514.0
+tooltip_text = "Click to close this menu."
+
+[node name="Ans4" type="Button" parent="answer/Panel"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 456.0
+offset_right = 456.0
+offset_bottom = 514.0
+tooltip_text = "Click to close this menu."
 
 [connection signal="body_entered" from="Clue1" to="Clue1" method="_on_body_entered"]
 [connection signal="body_exited" from="Clue1" to="Clue1" method="_on_body_exited"]
