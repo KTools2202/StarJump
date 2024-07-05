@@ -12,7 +12,7 @@ func show_message(title, body, callback_func = null):
 	callback = callback_func
 	show()
 
-func _on_ok_button_pressed():
+func _on_ans1_button_pressed():
 	hide()
 	if callback and callback is Callable:
 		callback.call()

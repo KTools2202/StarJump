@@ -22,7 +22,7 @@ func load_scene(scene_path):
 		current_scene.queue_free()
 	
 	# Add the new scene as a child of the root node
-	get_tree().root.add_child(new_scene)
+	get_tree().root.add_child.call_deferred(new_scene)
 	new_scene.owner = get_tree().root
 	
 func _on_checkpoint_reached():

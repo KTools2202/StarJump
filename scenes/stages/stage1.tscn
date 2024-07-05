@@ -1,8 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgdhq7qt34stf"]
+[gd_scene load_steps=15 format=3 uid="uid://dgdhq7qt34stf"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_4dh24"]
 [ext_resource type="Texture2D" uid="uid://cp83nypys7h3q" path="res://sprites/Astronaut Sprite 1.png" id="2_gthq2"]
 [ext_resource type="Script" path="res://scripts/Stage1/Clue1.gd" id="3_rns28"]
+[ext_resource type="Script" path="res://scripts/Stage1/Clue2.gd" id="4_pv2ro"]
+[ext_resource type="Script" path="res://scripts/Stage1/Clue3.gd" id="5_2j6ve"]
+[ext_resource type="Script" path="res://scripts/Stage1/Clue4.gd" id="6_dfxqv"]
+[ext_resource type="Script" path="res://scripts/Stage1/Clue5.gd" id="7_s042v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3myi4"]
 size = Vector2(116, 127)
@@ -55,6 +59,7 @@ offset_bottom = 52.0
 
 [node name="Clue2" type="Area2D" parent="."]
 position = Vector2(549, 75)
+script = ExtResource("4_pv2ro")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue2"]
 position = Vector2(54, 18)
@@ -68,6 +73,7 @@ offset_bottom = 28.0
 
 [node name="Clue3" type="Area2D" parent="."]
 position = Vector2(296, 468)
+script = ExtResource("5_2j6ve")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue3"]
 position = Vector2(44, 44)
@@ -79,6 +85,7 @@ offset_bottom = 23.0
 
 [node name="Clue4" type="Area2D" parent="."]
 position = Vector2(718, 461)
+script = ExtResource("6_dfxqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue4"]
 position = Vector2(55, 38)
@@ -90,14 +97,17 @@ offset_bottom = 23.0
 
 [node name="Clue5" type="Area2D" parent="."]
 position = Vector2(945, 57)
+script = ExtResource("7_s042v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue5"]
 position = Vector2(46, 23)
 shape = SubResource("CircleShape2D_ohvj2")
 
 [node name="Label" type="Label" parent="Clue5"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -37.0
+offset_top = 72.0
+offset_right = 3.0
+offset_bottom = 95.0
 
 [node name="answer" type="Area2D" parent="."]
 position = Vector2(37, 240)
@@ -147,3 +157,11 @@ text = "OK"
 
 [connection signal="body_entered" from="Clue1" to="Clue1" method="_on_body_entered"]
 [connection signal="body_exited" from="Clue1" to="Clue1" method="_on_body_exited"]
+[connection signal="body_entered" from="Clue2" to="Clue2" method="_on_body_entered"]
+[connection signal="body_exited" from="Clue2" to="Clue2" method="_on_body_exited"]
+[connection signal="body_entered" from="Clue3" to="Clue3" method="_on_body_entered"]
+[connection signal="body_exited" from="Clue3" to="Clue3" method="_on_body_exited"]
+[connection signal="body_entered" from="Clue4" to="Clue4" method="_on_body_entered"]
+[connection signal="body_exited" from="Clue4" to="Clue4" method="_on_body_exited"]
+[connection signal="body_entered" from="Clue5" to="Clue5" method="_on_body_entered"]
+[connection signal="body_exited" from="Clue5" to="Clue5" method="_on_body_exited"]
