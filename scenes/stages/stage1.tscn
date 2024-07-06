@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dgdhq7qt34stf"]
+[gd_scene load_steps=16 format=3 uid="uid://dgdhq7qt34stf"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_4dh24"]
 [ext_resource type="Texture2D" uid="uid://dlynbhoi58b3e" path="res://sprites/Astronaut Sprite 1.png" id="2_gthq2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/Stage1/Clue3.gd" id="5_2j6ve"]
 [ext_resource type="Script" path="res://scripts/Stage1/Clue4.gd" id="6_dfxqv"]
 [ext_resource type="Script" path="res://scripts/Stage1/Clue5.gd" id="7_s042v"]
+[ext_resource type="Script" path="res://scripts/Stage1/AnswerGUI.gd" id="8_yubbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3myi4"]
 size = Vector2(116, 127)
@@ -27,7 +28,7 @@ radius = 35.5106
 radius = 39.4588
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmj16"]
-size = Vector2(42, 100)
+size = Vector2(42, 648)
 
 [node name="Node2D" type="Node2D"]
 
@@ -111,9 +112,10 @@ offset_bottom = 95.0
 
 [node name="answer" type="Area2D" parent="."]
 position = Vector2(37, 240)
+script = ExtResource("8_yubbe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="answer"]
-position = Vector2(-37, 66)
+position = Vector2(-16, 84)
 shape = SubResource("RectangleShape2D_wmj16")
 
 [node name="Panel" type="Panel" parent="answer"]
@@ -182,3 +184,5 @@ tooltip_text = "Click to close this menu."
 [connection signal="body_exited" from="Clue4" to="Clue4" method="_on_body_exited"]
 [connection signal="body_entered" from="Clue5" to="Clue5" method="_on_body_entered"]
 [connection signal="body_exited" from="Clue5" to="Clue5" method="_on_body_exited"]
+[connection signal="body_entered" from="answer" to="answer" method="_on_body_entered"]
+[connection signal="body_exited" from="answer" to="answer" method="_on_body_exited"]
