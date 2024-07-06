@@ -12,7 +12,7 @@ extends Area2D
 
 func _ready():
 	heading.text = "QUIZ!"
-	
+	body.text = "Which star are you on?"
 	heading.visible_characters = 0
 	body.visible_characters = 0
 
