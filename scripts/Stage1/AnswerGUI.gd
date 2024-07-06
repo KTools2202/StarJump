@@ -35,6 +35,7 @@ func _on_body_entered(body):
 # Hiding text when the player exits the area
 func _on_body_exited(body):
 	if body.is_in_group("player"):
+		panel.visible = false
 		heading.visible_characters = 0
 		middle.visible_characters = 0
 		Ans1.visible = false

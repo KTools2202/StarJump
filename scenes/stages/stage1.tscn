@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://dgdhq7qt34stf"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_4dh24"]
-[ext_resource type="Texture2D" uid="uid://dlynbhoi58b3e" path="res://sprites/Astronaut Sprite 1.png" id="2_gthq2"]
+[ext_resource type="Texture2D" uid="uid://dhgvwxivav0sa" path="res://sprites/Astronaut Sprite 1 fire.png" id="2_7ny1k"]
 [ext_resource type="Script" path="res://scripts/Stage1/Clue1.gd" id="3_rns28"]
 [ext_resource type="Script" path="res://scripts/Stage1/Clue2.gd" id="4_pv2ro"]
 [ext_resource type="Script" path="res://scripts/Stage1/Clue3.gd" id="5_2j6ve"]
@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://scripts/Stage1/AnswerGUI.gd" id="8_yubbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3myi4"]
-size = Vector2(116, 127)
+size = Vector2(138, 151)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_agvig"]
 radius = 31.0
@@ -39,10 +39,10 @@ script = ExtResource("1_4dh24")
 position = Vector2(1003, 509.5)
 shape = SubResource("RectangleShape2D_3myi4")
 
-[node name="AstronautSprite1" type="Sprite2D" parent="Player"]
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(1003, 509.476)
 scale = Vector2(0.460317, 0.460317)
-texture = ExtResource("2_gthq2")
+texture = ExtResource("2_7ny1k")
 
 [node name="Clue1" type="Area2D" parent="."]
 position = Vector2(198, 31)
@@ -119,6 +119,7 @@ position = Vector2(-16, 84)
 shape = SubResource("RectangleShape2D_wmj16")
 
 [node name="Panel" type="Panel" parent="answer"]
+visible = false
 offset_left = 42.0
 offset_top = -221.0
 offset_right = 1039.0
