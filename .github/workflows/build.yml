@@ -49,11 +49,19 @@ jobs:
         uses: yeslayla/build-godot-action@v1.4.1
         with:
           name: StarJump # Specify the name of the exported binary
-          preset: "StarJump Windows EXE" # Specify the name of the preset in `export_presets.cfg` to use
+          preset: "StarJump Windows App" # Specify the name of the preset in `export_presets.cfg` to use
           subdirectory: "" # Optional, default is an empty string
           package: true # Optional, set to true to output an artifact zip file
           projectDir: . # Optional, default is .
           debugMode: true # Optional, specify true or false to use `--export-debug`
+          
+      - name: Godot Build Info
+        uses: robpc/godot-build-info-action@v1.0
+        with:
+          version: 1.0.0 # Specify package version
+          commit: ${{ github.sha }} # Specify the commit hash
+          build_date: ${{ github.run_date }} # Specify the build date/time
+          file: override.cfg # Specify the file to add the overrides
           
       - name: Upload Build
         uses: actions/upload-artifact@v4
@@ -66,12 +74,3 @@ jobs:
         with:
           name: StarJump artifact
           path: artifact
-
-      - name: Godot Build Info
-        uses: robpc/godot-build-info-action@v1.0
-        with:
-          version: 1.0.0 # Specify package version
-          commit: ${{ github.sha }} # Specify the commit hash
-          build_date: ${{ github.run_date }} # Specify the build date/time
-          file: override.cfg # Specify the file to add the overrides
-
