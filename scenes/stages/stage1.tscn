@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dgdhq7qt34stf"]
+[gd_scene load_steps=26 format=3 uid="uid://dgdhq7qt34stf"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_4dh24"]
 [ext_resource type="Texture2D" uid="uid://dhgvwxivav0sa" path="res://sprites/Astronaut Sprite 1 fire.png" id="2_7ny1k"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://scripts/Stage1/Clue4.gd" id="6_dfxqv"]
 [ext_resource type="Script" path="res://scripts/Stage1/Clue5.gd" id="7_s042v"]
 [ext_resource type="Script" path="res://scripts/Stage1/AnswerGUI.gd" id="8_yubbe"]
+[ext_resource type="Texture2D" uid="uid://ceo8fmyqrium1" path="res://sprites/Stars sheet.png" id="9_5uxs5"]
+[ext_resource type="Script" path="res://scripts/Starry background.gd" id="10_njl88"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3myi4"]
 size = Vector2(138, 151)
@@ -29,6 +31,63 @@ radius = 39.4588
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmj16"]
 size = Vector2(42, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fy8c"]
+atlas = ExtResource("9_5uxs5")
+region = Rect2(0, 0, 640, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvvmv"]
+atlas = ExtResource("9_5uxs5")
+region = Rect2(640, 0, 640, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byc1j"]
+atlas = ExtResource("9_5uxs5")
+region = Rect2(1280, 0, 640, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3keh"]
+atlas = ExtResource("9_5uxs5")
+region = Rect2(0, 320, 640, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn0gr"]
+atlas = ExtResource("9_5uxs5")
+region = Rect2(640, 320, 640, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yg5i2"]
+atlas = ExtResource("9_5uxs5")
+region = Rect2(1280, 320, 640, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5ugd"]
+atlas = ExtResource("9_5uxs5")
+region = Rect2(0, 640, 640, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uwnlw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fy8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvvmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byc1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3keh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jn0gr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yg5i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5ugd")
+}],
+"loop": true,
+"name": &"stars",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
 
@@ -149,7 +208,6 @@ offset_left = 524.0
 offset_top = 544.0
 offset_right = 747.0
 offset_bottom = 602.0
-tooltip_text = "Click to close this menu."
 
 [node name="Ans2" type="Button" parent="answer/Panel"]
 layout_mode = 0
@@ -174,6 +232,14 @@ offset_top = 456.0
 offset_right = 456.0
 offset_bottom = 514.0
 tooltip_text = "Click to close this menu."
+
+[node name="Starry background" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 324.5)
+scale = Vector2(1.8, 2.02188)
+sprite_frames = SubResource("SpriteFrames_uwnlw")
+animation = &"stars"
+frame = 6
+script = ExtResource("10_njl88")
 
 [connection signal="body_entered" from="Clue1" to="Clue1" method="_on_body_entered"]
 [connection signal="body_exited" from="Clue1" to="Clue1" method="_on_body_exited"]
