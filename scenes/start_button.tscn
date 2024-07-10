@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ij081mw11vmd"]
+[gd_scene load_steps=5 format=3 uid="uid://ij081mw11vmd"]
 
 [ext_resource type="Script" path="res://scripts/scene_transition.gd" id="1_0qwew"]
 [ext_resource type="Texture2D" uid="uid://dv8rqv5yof8nd" path="res://sprites/Start button unclicked.png" id="1_u3ucj"]
+[ext_resource type="AudioStream" uid="uid://dfaswthopohch" path="res://audio/The Journey (final ver.).mp3" id="2_5pfl5"]
 [ext_resource type="Texture2D" uid="uid://g0prqcwksx5u" path="res://sprites/Start button clicked.png" id="2_32y8s"]
 
 [node name="Control" type="Control"]
@@ -16,6 +17,9 @@ offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0qwew")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_5pfl5")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
