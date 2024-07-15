@@ -1,7 +1,5 @@
 extends Area2D 
 
-#@export var pop_up_text: String = "It's the closest star to the Sun!"
-
 @onready var panel = $Panel
 @onready var heading = $Panel/Label
 @onready var middle = $Panel/Body

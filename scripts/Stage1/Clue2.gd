@@ -1,8 +1,6 @@
 extends Area2D 
 
-#@export var pop_up_text: String = "It's the closest star to the Sun!"
-
-@onready var label = $Label  # Path may need to be changed if still not functioning
+@onready var label = $Label  
 
 func _ready():
 	label.text = "It's the closest star to the Sun!"
