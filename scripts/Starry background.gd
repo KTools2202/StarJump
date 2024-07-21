@@ -12,4 +12,4 @@ func _process(delta):
 	get_autoplay()
 
 func _on_ans_4_pressed():
-	pass # Replace with function body.
+	audio_player.stop()

@@ -259,4 +259,5 @@ text = "Sun"
 [connection signal="pressed" from="answer/Panel/Ans1" to="answer" method="_on_ans_1_pressed"]
 [connection signal="pressed" from="answer/Panel/Ans2" to="answer" method="_on_ans_2_pressed"]
 [connection signal="pressed" from="answer/Panel/Ans3" to="answer" method="_on_ans_3_pressed"]
+[connection signal="pressed" from="answer/Panel/Ans4" to="Starry background" method="_on_ans_4_pressed"]
 [connection signal="pressed" from="answer/Panel/Ans4" to="answer" method="_on_ans_4_pressed"]
