@@ -17,4 +17,7 @@ func _on_button_pressed():
 	# Debug line
 	print("Button pressed, stopping music and changing scenes!")
 	audio_player.stop()
-	get_tree().change_scene_to_file("res://scenes/stages/stage1.tscn")
+	get_tree().change_scene_to_file("res://scenes/cockpit.tscn")
+
+func _on_audio_stream_player_finished():
+	audio_player.play()

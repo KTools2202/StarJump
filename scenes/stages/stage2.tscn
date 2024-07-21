@@ -1,44 +1,44 @@
-[gd_scene load_steps=28 format=3 uid="uid://dgdhq7qt34stf"]
+[gd_scene load_steps=28 format=3 uid="uid://dvanpqruglgkd"]
 
-[ext_resource type="Script" path="res://scripts/Player.gd" id="1_4dh24"]
-[ext_resource type="Texture2D" uid="uid://dhgvwxivav0sa" path="res://sprites/Astronaut Sprite 1 fire.png" id="2_7ny1k"]
-[ext_resource type="AudioStream" uid="uid://dfaswthopohch" path="res://audio/The Journey (final ver.).mp3" id="3_07jfn"]
-[ext_resource type="Script" path="res://scripts/Stage1/Clue1.gd" id="3_rns28"]
-[ext_resource type="Script" path="res://scripts/Stage1/Clue2.gd" id="4_pv2ro"]
-[ext_resource type="Script" path="res://scripts/Stage1/Clue3.gd" id="5_2j6ve"]
-[ext_resource type="Texture2D" uid="uid://c70xoliuvmds" path="res://sprites/Sun.png" id="6_5taep"]
-[ext_resource type="Script" path="res://scripts/Stage1/Clue4.gd" id="6_dfxqv"]
-[ext_resource type="Script" path="res://scripts/Stage1/Clue5.gd" id="7_s042v"]
-[ext_resource type="Script" path="res://scripts/Stage1/AnswerGUI.gd" id="8_yubbe"]
-[ext_resource type="Texture2D" uid="uid://ceo8fmyqrium1" path="res://sprites/Stars sheet.png" id="9_5uxs5"]
-[ext_resource type="Script" path="res://scripts/Starry background.gd" id="10_njl88"]
+[ext_resource type="Texture2D" uid="uid://ceo8fmyqrium1" path="res://sprites/Stars sheet.png" id="1_uk30u"]
+[ext_resource type="Script" path="res://scripts/Starry background.gd" id="2_6xdch"]
+[ext_resource type="AudioStream" uid="uid://dfaswthopohch" path="res://audio/The Journey (final ver.).mp3" id="3_0g6qg"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="4_n20oe"]
+[ext_resource type="Texture2D" uid="uid://dhgvwxivav0sa" path="res://sprites/Astronaut Sprite 1 fire.png" id="5_hgogw"]
+[ext_resource type="Script" path="res://scripts/Stage2/Clue1.gd" id="6_8v7fc"]
+[ext_resource type="Texture2D" uid="uid://c70xoliuvmds" path="res://sprites/Sun.png" id="7_08fvd"]
+[ext_resource type="Script" path="res://scripts/Stage2/Clue2.gd" id="8_i7dl7"]
+[ext_resource type="Script" path="res://scripts/Stage2/Clue3.gd" id="9_c5eqc"]
+[ext_resource type="Script" path="res://scripts/Stage2/Clue4.gd" id="10_wpwbu"]
+[ext_resource type="Script" path="res://scripts/Stage2/Clue5.gd" id="11_rlvsd"]
+[ext_resource type="Script" path="res://scripts/Stage2/AnswerGUI.gd" id="12_o6d3n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fy8c"]
-atlas = ExtResource("9_5uxs5")
+atlas = ExtResource("1_uk30u")
 region = Rect2(0, 0, 640, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xvvmv"]
-atlas = ExtResource("9_5uxs5")
+atlas = ExtResource("1_uk30u")
 region = Rect2(640, 0, 640, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_byc1j"]
-atlas = ExtResource("9_5uxs5")
+atlas = ExtResource("1_uk30u")
 region = Rect2(1280, 0, 640, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3keh"]
-atlas = ExtResource("9_5uxs5")
+atlas = ExtResource("1_uk30u")
 region = Rect2(0, 320, 640, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jn0gr"]
-atlas = ExtResource("9_5uxs5")
+atlas = ExtResource("1_uk30u")
 region = Rect2(640, 320, 640, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yg5i2"]
-atlas = ExtResource("9_5uxs5")
+atlas = ExtResource("1_uk30u")
 region = Rect2(1280, 320, 640, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5ugd"]
-atlas = ExtResource("9_5uxs5")
+atlas = ExtResource("1_uk30u")
 region = Rect2(0, 640, 640, 320)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uwnlw"]
@@ -99,13 +99,14 @@ scale = Vector2(1.8, 2.02188)
 sprite_frames = SubResource("SpriteFrames_uwnlw")
 animation = &"stars"
 frame = 6
-script = ExtResource("10_njl88")
+script = ExtResource("2_6xdch")
 
 [node name="Background" type="AudioStreamPlayer" parent="Starry background"]
-stream = ExtResource("3_07jfn")
+stream = ExtResource("3_0g6qg")
+autoplay = true
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
-script = ExtResource("1_4dh24")
+script = ExtResource("4_n20oe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(1003, 509.5)
@@ -114,11 +115,11 @@ shape = SubResource("RectangleShape2D_3myi4")
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(1003, 509.476)
 scale = Vector2(0.460317, 0.460317)
-texture = ExtResource("2_7ny1k")
+texture = ExtResource("5_hgogw")
 
 [node name="Clue1" type="Area2D" parent="."]
 position = Vector2(198, 31)
-script = ExtResource("3_rns28")
+script = ExtResource("6_8v7fc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue1"]
 position = Vector2(37, 40)
@@ -126,11 +127,11 @@ shape = SubResource("CircleShape2D_agvig")
 
 [node name="Sun" type="Sprite2D" parent="Clue1"]
 position = Vector2(139, 40)
-texture = ExtResource("6_5taep")
+texture = ExtResource("7_08fvd")
 
 [node name="Clue2" type="Area2D" parent="."]
 position = Vector2(549, 75)
-script = ExtResource("4_pv2ro")
+script = ExtResource("8_i7dl7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue2"]
 position = Vector2(54, 18)
@@ -144,7 +145,7 @@ offset_bottom = 28.0
 
 [node name="Clue3" type="Area2D" parent="."]
 position = Vector2(296, 468)
-script = ExtResource("5_2j6ve")
+script = ExtResource("9_c5eqc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue3"]
 position = Vector2(44, 44)
@@ -156,7 +157,7 @@ offset_bottom = 23.0
 
 [node name="Clue4" type="Area2D" parent="."]
 position = Vector2(718, 461)
-script = ExtResource("6_dfxqv")
+script = ExtResource("10_wpwbu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue4"]
 position = Vector2(55, 38)
@@ -168,7 +169,7 @@ offset_bottom = 23.0
 
 [node name="Clue5" type="Area2D" parent="."]
 position = Vector2(945, 57)
-script = ExtResource("7_s042v")
+script = ExtResource("11_rlvsd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue5"]
 position = Vector2(46, 23)
@@ -182,7 +183,7 @@ offset_bottom = 95.0
 
 [node name="answer" type="Area2D" parent="."]
 position = Vector2(37, 240)
-script = ExtResource("8_yubbe")
+script = ExtResource("12_o6d3n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="answer"]
 position = Vector2(-16, 84)
@@ -218,7 +219,7 @@ offset_left = 524.0
 offset_top = 544.0
 offset_right = 747.0
 offset_bottom = 602.0
-text = "Vega"
+text = "Polaris"
 
 [node name="Ans2" type="Button" parent="answer/Panel"]
 layout_mode = 0
@@ -226,7 +227,7 @@ offset_left = 230.0
 offset_top = 542.0
 offset_right = 453.0
 offset_bottom = 600.0
-text = "Sirius"
+text = "Andromeda"
 
 [node name="Ans3" type="Button" parent="answer/Panel"]
 layout_mode = 0
@@ -234,7 +235,7 @@ offset_left = 521.0
 offset_top = 456.0
 offset_right = 744.0
 offset_bottom = 514.0
-text = "Altair"
+text = "Cancer"
 
 [node name="Ans4" type="Button" parent="answer/Panel"]
 layout_mode = 0
@@ -242,7 +243,15 @@ offset_left = 233.0
 offset_top = 456.0
 offset_right = 456.0
 offset_bottom = 514.0
-text = "Sun"
+text = "Cassiopeia"
+
+[node name="Return" type="Button" parent="answer/Panel"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 330.0
+offset_right = 562.0
+offset_bottom = 416.0
+text = "Return to cockpit!"
 
 [connection signal="finished" from="Starry background/Background" to="Starry background" method="_on_background_finished"]
 [connection signal="body_entered" from="Clue1" to="Clue1" method="_on_body_entered"]
@@ -262,3 +271,4 @@ text = "Sun"
 [connection signal="pressed" from="answer/Panel/Ans3" to="answer" method="_on_ans_3_pressed"]
 [connection signal="pressed" from="answer/Panel/Ans4" to="Starry background" method="_on_ans_4_pressed"]
 [connection signal="pressed" from="answer/Panel/Ans4" to="answer" method="_on_ans_4_pressed"]
+[connection signal="pressed" from="answer/Panel/Return" to="answer" method="_on_return_pressed"]

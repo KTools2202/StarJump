@@ -35,3 +35,5 @@ offset_bottom = 133.0
 action_mode = 0
 texture_normal = ExtResource("1_u3ucj")
 texture_pressed = ExtResource("2_32y8s")
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

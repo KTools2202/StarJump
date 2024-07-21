@@ -3,7 +3,6 @@ extends Area2D
 @onready var hint = $Sun  
 
 func _ready():
-	hint.text = "It's the closest star to the Sun!"
 	hint.visible = false
 
 # Showing text when the player enters the area

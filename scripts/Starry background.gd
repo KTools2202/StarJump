@@ -13,3 +13,6 @@ func _process(delta):
 
 func _on_ans_4_pressed():
 	audio_player.stop()
+
+func _on_background_finished():
+	audio_player.play()
