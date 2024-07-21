@@ -244,6 +244,13 @@ offset_right = 456.0
 offset_bottom = 514.0
 text = "Sun"
 
+[node name="Return" type="Button" parent="answer/Panel"]
+offset_left = 649.0
+offset_top = 786.0
+offset_right = 795.0
+offset_bottom = 872.0
+text = "Return to cockpit!"
+
 [connection signal="finished" from="Starry background/Background" to="Starry background" method="_on_background_finished"]
 [connection signal="body_entered" from="Clue1" to="Clue1" method="_on_body_entered"]
 [connection signal="body_exited" from="Clue1" to="Clue1" method="_on_body_exited"]
@@ -262,3 +269,4 @@ text = "Sun"
 [connection signal="pressed" from="answer/Panel/Ans3" to="answer" method="_on_ans_3_pressed"]
 [connection signal="pressed" from="answer/Panel/Ans4" to="Starry background" method="_on_ans_4_pressed"]
 [connection signal="pressed" from="answer/Panel/Ans4" to="answer" method="_on_ans_4_pressed"]
+[connection signal="pressed" from="answer/Panel/Return" to="answer" method="_on_return_pressed"]

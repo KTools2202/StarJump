@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/Player.gd" id="4_n20oe"]
 [ext_resource type="Texture2D" uid="uid://dhgvwxivav0sa" path="res://sprites/Astronaut Sprite 1 fire.png" id="5_hgogw"]
 [ext_resource type="Script" path="res://scripts/Stage2/Clue1.gd" id="6_8v7fc"]
-[ext_resource type="Texture2D" uid="uid://c70xoliuvmds" path="res://sprites/Sun.png" id="7_08fvd"]
+[ext_resource type="Texture2D" uid="uid://chprpjr43mx04" path="res://sprites/Polaris.png" id="7_ec3y8"]
 [ext_resource type="Script" path="res://scripts/Stage2/Clue2.gd" id="8_i7dl7"]
 [ext_resource type="Script" path="res://scripts/Stage2/Clue3.gd" id="9_c5eqc"]
 [ext_resource type="Script" path="res://scripts/Stage2/Clue4.gd" id="10_wpwbu"]
@@ -125,9 +125,9 @@ script = ExtResource("6_8v7fc")
 position = Vector2(37, 40)
 shape = SubResource("CircleShape2D_agvig")
 
-[node name="Sun" type="Sprite2D" parent="Clue1"]
+[node name="Polaris" type="Sprite2D" parent="Clue1"]
 position = Vector2(139, 40)
-texture = ExtResource("7_08fvd")
+texture = ExtResource("7_ec3y8")
 
 [node name="Clue2" type="Area2D" parent="."]
 position = Vector2(549, 75)
@@ -227,7 +227,7 @@ offset_left = 230.0
 offset_top = 542.0
 offset_right = 453.0
 offset_bottom = 600.0
-text = "Andromeda"
+text = "Baekdu"
 
 [node name="Ans3" type="Button" parent="answer/Panel"]
 layout_mode = 0
@@ -235,7 +235,7 @@ offset_left = 521.0
 offset_top = 456.0
 offset_right = 744.0
 offset_bottom = 514.0
-text = "Cancer"
+text = "Acubens"
 
 [node name="Ans4" type="Button" parent="answer/Panel"]
 layout_mode = 0
@@ -243,7 +243,7 @@ offset_left = 233.0
 offset_top = 456.0
 offset_right = 456.0
 offset_bottom = 514.0
-text = "Cassiopeia"
+text = "Achbird"
 
 [node name="Return" type="Button" parent="answer/Panel"]
 layout_mode = 0

@@ -7,6 +7,7 @@ extends Area2D
 @onready var Ans2 = $Panel/Ans2
 @onready var Ans3 = $Panel/Ans3
 @onready var Ans4 = $Panel/Ans4
+@onready var cockpit_button = $Panel/Return
 
 func _ready():
 	heading.text = "QUIZ!"
@@ -48,6 +49,7 @@ func _on_ans_4_pressed():
 	Ans2.visible = false
 	Ans3.visible = false
 	Ans4.visible = false
+	cockpit_button.visible = true
 
 func _on_ans_1_pressed():
 	middle.text = "Incorrect!"
@@ -57,3 +59,6 @@ func _on_ans_2_pressed():
 
 func _on_ans_3_pressed():
 	middle.text = "Incorrect!"
+
+func _on_return_pressed():
+	get_tree().change_scene_to_file("res://scenes/cockpit.tscn")
