@@ -40,3 +40,20 @@ func _on_body_exited(body):
 		Ans2.visible = false
 		Ans3.visible = false
 		Ans4.visible = false
+
+func _on_ans_4_pressed():
+	middle.text = "Correct!"
+	heading.visible_characters = 0
+	Ans1.visible = false
+	Ans2.visible = false
+	Ans3.visible = false
+	Ans4.visible = false
+
+func _on_ans_1_pressed():
+	middle.text = "Incorrect!"
+
+func _on_ans_2_pressed():
+	middle.text = "Incorrect!"
+
+func _on_ans_3_pressed():
+	middle.text = "Incorrect!"

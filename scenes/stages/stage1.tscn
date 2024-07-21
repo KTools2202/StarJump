@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dgdhq7qt34stf"]
+[gd_scene load_steps=28 format=3 uid="uid://dgdhq7qt34stf"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_4dh24"]
 [ext_resource type="Texture2D" uid="uid://dhgvwxivav0sa" path="res://sprites/Astronaut Sprite 1 fire.png" id="2_7ny1k"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://scripts/Stage1/AnswerGUI.gd" id="8_yubbe"]
 [ext_resource type="Texture2D" uid="uid://ceo8fmyqrium1" path="res://sprites/Stars sheet.png" id="9_5uxs5"]
 [ext_resource type="Script" path="res://scripts/Starry background.gd" id="10_njl88"]
+[ext_resource type="AudioStream" uid="uid://o1fpcdhcrr3e" path="res://audio/Another Night (inside cockpit music) .mp3" id="12_hpkl2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fy8c"]
 atlas = ExtResource("9_5uxs5")
@@ -100,6 +101,9 @@ animation = &"stars"
 frame = 6
 script = ExtResource("10_njl88")
 
+[node name="Background" type="AudioStreamPlayer" parent="Starry background"]
+stream = ExtResource("12_hpkl2")
+
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 script = ExtResource("1_4dh24")
 
@@ -185,7 +189,6 @@ position = Vector2(-16, 84)
 shape = SubResource("RectangleShape2D_wmj16")
 
 [node name="Panel" type="Panel" parent="answer"]
-visible = false
 offset_left = 42.0
 offset_top = -221.0
 offset_right = 1039.0
@@ -253,3 +256,7 @@ text = "Sun"
 [connection signal="body_exited" from="Clue5" to="Clue5" method="_on_body_exited"]
 [connection signal="body_entered" from="answer" to="answer" method="_on_body_entered"]
 [connection signal="body_exited" from="answer" to="answer" method="_on_body_exited"]
+[connection signal="pressed" from="answer/Panel/Ans1" to="answer" method="_on_ans_1_pressed"]
+[connection signal="pressed" from="answer/Panel/Ans2" to="answer" method="_on_ans_2_pressed"]
+[connection signal="pressed" from="answer/Panel/Ans3" to="answer" method="_on_ans_3_pressed"]
+[connection signal="pressed" from="answer/Panel/Ans4" to="answer" method="_on_ans_4_pressed"]
