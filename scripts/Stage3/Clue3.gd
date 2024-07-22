@@ -3,7 +3,7 @@ extends Area2D
 @onready var label = $Label
 
 func _ready():
-	label.text = "This star has been reliable in finding North!"
+	label.text = "It is a red dwarf star."
 	label.visible_characters = 0
 
 # Showing text when the player enters the area

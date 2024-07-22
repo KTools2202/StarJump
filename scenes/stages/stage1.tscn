@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dgdhq7qt34stf"]
+[gd_scene load_steps=29 format=3 uid="uid://dgdhq7qt34stf"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_4dh24"]
 [ext_resource type="Texture2D" uid="uid://dhgvwxivav0sa" path="res://sprites/Astronaut Sprite 1 fire.png" id="2_7ny1k"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c70xoliuvmds" path="res://sprites/Sun.png" id="6_5taep"]
 [ext_resource type="Script" path="res://scripts/Stage1/Clue4.gd" id="6_dfxqv"]
 [ext_resource type="Script" path="res://scripts/Stage1/Clue5.gd" id="7_s042v"]
+[ext_resource type="Texture2D" uid="uid://dxr0ynox11apr" path="res://sprites/sun star icon.png" id="8_2enxe"]
 [ext_resource type="Script" path="res://scripts/Stage1/AnswerGUI.gd" id="8_yubbe"]
 [ext_resource type="Texture2D" uid="uid://ceo8fmyqrium1" path="res://sprites/Stars sheet.png" id="9_5uxs5"]
 [ext_resource type="Script" path="res://scripts/Starry background.gd" id="10_njl88"]
@@ -128,6 +129,10 @@ shape = SubResource("CircleShape2D_agvig")
 position = Vector2(139, 40)
 texture = ExtResource("6_5taep")
 
+[node name="SunStarIcon" type="Sprite2D" parent="Clue1"]
+position = Vector2(36, 43)
+texture = ExtResource("8_2enxe")
+
 [node name="Clue2" type="Area2D" parent="."]
 position = Vector2(549, 75)
 script = ExtResource("4_pv2ro")
@@ -142,6 +147,10 @@ offset_top = 5.0
 offset_right = 134.0
 offset_bottom = 28.0
 
+[node name="SunStarIcon2" type="Sprite2D" parent="Clue2"]
+position = Vector2(55, 18)
+texture = ExtResource("8_2enxe")
+
 [node name="Clue3" type="Area2D" parent="."]
 position = Vector2(296, 468)
 script = ExtResource("5_2j6ve")
@@ -154,6 +163,10 @@ shape = SubResource("CircleShape2D_3rrcl")
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="SunStarIcon3" type="Sprite2D" parent="Clue3"]
+position = Vector2(43, 47)
+texture = ExtResource("8_2enxe")
+
 [node name="Clue4" type="Area2D" parent="."]
 position = Vector2(718, 461)
 script = ExtResource("6_dfxqv")
@@ -165,6 +178,10 @@ shape = SubResource("CircleShape2D_eo4rb")
 [node name="Label" type="Label" parent="Clue4"]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="SunStarIcon4" type="Sprite2D" parent="Clue4"]
+position = Vector2(57, 41)
+texture = ExtResource("8_2enxe")
 
 [node name="Clue5" type="Area2D" parent="."]
 position = Vector2(945, 57)
@@ -180,9 +197,17 @@ offset_top = 72.0
 offset_right = 3.0
 offset_bottom = 95.0
 
+[node name="SunStarIcon5" type="Sprite2D" parent="Clue5"]
+position = Vector2(49, 25)
+texture = ExtResource("8_2enxe")
+
 [node name="answer" type="Area2D" parent="."]
 position = Vector2(37, 240)
 script = ExtResource("8_yubbe")
+
+[node name="SunStarIcon" type="Sprite2D" parent="answer"]
+position = Vector2(-15, 85)
+texture = ExtResource("8_2enxe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="answer"]
 position = Vector2(-16, 84)
@@ -245,6 +270,7 @@ offset_bottom = 514.0
 text = "Sun"
 
 [node name="Return" type="Button" parent="answer/Panel"]
+layout_mode = 0
 offset_left = 649.0
 offset_top = 786.0
 offset_right = 795.0

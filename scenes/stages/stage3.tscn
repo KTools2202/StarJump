@@ -1,45 +1,45 @@
-[gd_scene load_steps=29 format=3 uid="uid://dvanpqruglgkd"]
+[gd_scene load_steps=29 format=3 uid="uid://g0s6gupgnnm4"]
 
-[ext_resource type="Texture2D" uid="uid://ceo8fmyqrium1" path="res://sprites/Stars sheet.png" id="1_uk30u"]
-[ext_resource type="Script" path="res://scripts/Starry background.gd" id="2_6xdch"]
-[ext_resource type="AudioStream" uid="uid://dfaswthopohch" path="res://audio/The Journey (final ver.).mp3" id="3_0g6qg"]
-[ext_resource type="Script" path="res://scripts/Player.gd" id="4_n20oe"]
-[ext_resource type="Texture2D" uid="uid://dhgvwxivav0sa" path="res://sprites/Astronaut Sprite 1 fire.png" id="5_hgogw"]
-[ext_resource type="Script" path="res://scripts/Stage2/Clue1.gd" id="6_8v7fc"]
-[ext_resource type="Texture2D" uid="uid://dxr0ynox11apr" path="res://sprites/sun star icon.png" id="7_0r5pq"]
-[ext_resource type="Texture2D" uid="uid://chprpjr43mx04" path="res://sprites/Polaris.png" id="7_ec3y8"]
-[ext_resource type="Script" path="res://scripts/Stage2/Clue2.gd" id="8_i7dl7"]
-[ext_resource type="Script" path="res://scripts/Stage2/Clue3.gd" id="9_c5eqc"]
-[ext_resource type="Script" path="res://scripts/Stage2/Clue4.gd" id="10_wpwbu"]
-[ext_resource type="Script" path="res://scripts/Stage2/Clue5.gd" id="11_rlvsd"]
-[ext_resource type="Script" path="res://scripts/Stage2/AnswerGUI.gd" id="12_o6d3n"]
+[ext_resource type="Texture2D" uid="uid://ceo8fmyqrium1" path="res://sprites/Stars sheet.png" id="1_gki22"]
+[ext_resource type="Script" path="res://scripts/Starry background.gd" id="2_bemp2"]
+[ext_resource type="AudioStream" uid="uid://dfaswthopohch" path="res://audio/The Journey (final ver.).mp3" id="3_wmn4s"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="4_gesnn"]
+[ext_resource type="Texture2D" uid="uid://dhgvwxivav0sa" path="res://sprites/Astronaut Sprite 1 fire.png" id="5_t54v5"]
+[ext_resource type="Script" path="res://scripts/Stage3/Clue1.gd" id="6_b2ti4"]
+[ext_resource type="Texture2D" uid="uid://blpw7bgteup87" path="res://sprites/Proxima centauri.png" id="7_6ylwy"]
+[ext_resource type="Texture2D" uid="uid://dxr0ynox11apr" path="res://sprites/sun star icon.png" id="7_obvvx"]
+[ext_resource type="Script" path="res://scripts/Stage3/Clue2.gd" id="8_p5yo5"]
+[ext_resource type="Script" path="res://scripts/Stage3/Clue3.gd" id="9_5nq1p"]
+[ext_resource type="Script" path="res://scripts/Stage3/Clue4.gd" id="10_xjp6g"]
+[ext_resource type="Script" path="res://scripts/Stage3/Clue5.gd" id="11_6a8lr"]
+[ext_resource type="Script" path="res://scripts/Stage3/AnswerGUI.gd" id="12_qhll2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fy8c"]
-atlas = ExtResource("1_uk30u")
+atlas = ExtResource("1_gki22")
 region = Rect2(0, 0, 640, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xvvmv"]
-atlas = ExtResource("1_uk30u")
+atlas = ExtResource("1_gki22")
 region = Rect2(640, 0, 640, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_byc1j"]
-atlas = ExtResource("1_uk30u")
+atlas = ExtResource("1_gki22")
 region = Rect2(1280, 0, 640, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3keh"]
-atlas = ExtResource("1_uk30u")
+atlas = ExtResource("1_gki22")
 region = Rect2(0, 320, 640, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jn0gr"]
-atlas = ExtResource("1_uk30u")
+atlas = ExtResource("1_gki22")
 region = Rect2(640, 320, 640, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yg5i2"]
-atlas = ExtResource("1_uk30u")
+atlas = ExtResource("1_gki22")
 region = Rect2(1280, 320, 640, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5ugd"]
-atlas = ExtResource("1_uk30u")
+atlas = ExtResource("1_gki22")
 region = Rect2(0, 640, 640, 320)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uwnlw"]
@@ -100,14 +100,14 @@ scale = Vector2(1.8, 2.02188)
 sprite_frames = SubResource("SpriteFrames_uwnlw")
 animation = &"stars"
 frame = 6
-script = ExtResource("2_6xdch")
+script = ExtResource("2_bemp2")
 
 [node name="Background" type="AudioStreamPlayer" parent="Starry background"]
-stream = ExtResource("3_0g6qg")
+stream = ExtResource("3_wmn4s")
 autoplay = true
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
-script = ExtResource("4_n20oe")
+script = ExtResource("4_gesnn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(1003, 509.5)
@@ -116,31 +116,31 @@ shape = SubResource("RectangleShape2D_3myi4")
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(1003, 509.476)
 scale = Vector2(0.460317, 0.460317)
-texture = ExtResource("5_hgogw")
+texture = ExtResource("5_t54v5")
 
 [node name="Clue1" type="Area2D" parent="."]
 position = Vector2(198, 31)
-script = ExtResource("6_8v7fc")
+script = ExtResource("6_b2ti4")
 
 [node name="SunStarIcon" type="Sprite2D" parent="Clue1"]
 position = Vector2(36, 43)
-texture = ExtResource("7_0r5pq")
+texture = ExtResource("7_obvvx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue1"]
 position = Vector2(37, 40)
 shape = SubResource("CircleShape2D_agvig")
 
-[node name="Polaris" type="Sprite2D" parent="Clue1"]
+[node name="Proxima" type="Sprite2D" parent="Clue1"]
 position = Vector2(139, 40)
-texture = ExtResource("7_ec3y8")
+texture = ExtResource("7_6ylwy")
 
 [node name="Clue2" type="Area2D" parent="."]
 position = Vector2(549, 75)
-script = ExtResource("8_i7dl7")
+script = ExtResource("8_p5yo5")
 
 [node name="SunStarIcon2" type="Sprite2D" parent="Clue2"]
 position = Vector2(55, 18)
-texture = ExtResource("7_0r5pq")
+texture = ExtResource("7_obvvx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue2"]
 position = Vector2(54, 18)
@@ -154,11 +154,11 @@ offset_bottom = 28.0
 
 [node name="Clue3" type="Area2D" parent="."]
 position = Vector2(296, 468)
-script = ExtResource("9_c5eqc")
+script = ExtResource("9_5nq1p")
 
 [node name="SunStarIcon3" type="Sprite2D" parent="Clue3"]
 position = Vector2(43, 47)
-texture = ExtResource("7_0r5pq")
+texture = ExtResource("7_obvvx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue3"]
 position = Vector2(44, 44)
@@ -170,11 +170,11 @@ offset_bottom = 23.0
 
 [node name="Clue4" type="Area2D" parent="."]
 position = Vector2(718, 461)
-script = ExtResource("10_wpwbu")
+script = ExtResource("10_xjp6g")
 
 [node name="SunStarIcon4" type="Sprite2D" parent="Clue4"]
 position = Vector2(57, 41)
-texture = ExtResource("7_0r5pq")
+texture = ExtResource("7_obvvx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue4"]
 position = Vector2(55, 38)
@@ -186,7 +186,11 @@ offset_bottom = 23.0
 
 [node name="Clue5" type="Area2D" parent="."]
 position = Vector2(945, 57)
-script = ExtResource("11_rlvsd")
+script = ExtResource("11_6a8lr")
+
+[node name="SunStarIcon5" type="Sprite2D" parent="Clue5"]
+position = Vector2(49, 25)
+texture = ExtResource("7_obvvx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clue5"]
 position = Vector2(46, 23)
@@ -198,23 +202,20 @@ offset_top = 72.0
 offset_right = 3.0
 offset_bottom = 95.0
 
-[node name="SunStarIcon5" type="Sprite2D" parent="Clue5"]
-position = Vector2(49, 25)
-texture = ExtResource("7_0r5pq")
-
 [node name="answer" type="Area2D" parent="."]
 position = Vector2(37, 240)
-script = ExtResource("12_o6d3n")
+script = ExtResource("12_qhll2")
 
 [node name="SunStarIcon" type="Sprite2D" parent="answer"]
 position = Vector2(-15, 85)
-texture = ExtResource("7_0r5pq")
+texture = ExtResource("7_obvvx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="answer"]
 position = Vector2(-16, 84)
 shape = SubResource("RectangleShape2D_wmj16")
 
 [node name="Panel" type="Panel" parent="answer"]
+visible = false
 offset_left = 42.0
 offset_top = -221.0
 offset_right = 1039.0
@@ -260,7 +261,7 @@ offset_left = 521.0
 offset_top = 456.0
 offset_right = 744.0
 offset_bottom = 514.0
-text = "Acubens"
+text = "Proxima centauri"
 
 [node name="Ans4" type="Button" parent="answer/Panel"]
 layout_mode = 0
@@ -268,7 +269,7 @@ offset_left = 233.0
 offset_top = 456.0
 offset_right = 456.0
 offset_bottom = 514.0
-text = "Achbird"
+text = "Spica"
 
 [node name="Return" type="Button" parent="answer/Panel"]
 layout_mode = 0
