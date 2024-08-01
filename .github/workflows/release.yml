@@ -1,33 +1,15 @@
 name: Build Godot Game
 
-on: 
-  workflow_dispatch:
+on:
   push:
-    branches: [ main ]
-    paths:
-      - "scenes/**"
-      - "scripts/**"
-      - "sprites/**"
-      - "Main.tscn"
-      - "project.godot"
-      #- "ans/answers.json"
-      # Uncomment when we get to this stage.
-  pull_request:
-    branches: [ main ]
-    paths:
-      - "scenes/**"
-      - "scripts/**"
-      - "sprites/**"
-      - "Main.tscn"
-      - "project.godot"
-      #- "ans/answers.json"
-      # Uncomment when we get to this stage.
+    tags:
+        - "v*"
   
 permissions:
   contents: read
 
 jobs:
-  build:
+  build-and-release:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -47,10 +29,17 @@ jobs:
         godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.0/Godot_v4.0-stable_export_templates.tpz
         relative_project_path: '.'
         wine_path: ${{ steps.wine_install.outputs.WINE_PATH }}
-        archive_output: true
     
-    - name: Upload archives
-      uses: actions/upload-artifact@v2
+    - name: Upload production artifacts
+      uses: actions/upload-artifact@v4
       with:
-        name: StarJump archives
-        path: ${{ steps.export.outputs.archive_directory }}/*
+        name: StarJump builds
+        path: ${{ steps.export.outputs.build_directory }}/*
+
+    - name: Create release
+      uses: ncipollo/release-action@v1.14.0
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        generateReleaseNotes: true
+        tag: ${{ github.ref_name }}
+        artifacts: ${{ steps.export.outputs.build_directory }}/*
