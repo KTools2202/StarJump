@@ -10,6 +10,7 @@ on:
       - "sprites/**"
       - "Main.tscn"
       - "project.godot"
+      - "export_presets.cfg"
       #- "ans/answers.json"
       # Uncomment when we get to this stage.
   pull_request:
@@ -20,6 +21,7 @@ on:
       - "sprites/**"
       - "Main.tscn"
       - "project.godot"
+      - "export_presets.cfg"
       #- "ans/answers.json"
       # Uncomment when we get to this stage.
   
@@ -50,7 +52,7 @@ jobs:
         archive_output: true
     
     - name: Upload archives
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: StarJump archives
         path: ${{ steps.export.outputs.archive_directory }}/*
