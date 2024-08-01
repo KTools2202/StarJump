@@ -1,4 +1,4 @@
-name: Build Godot Game
+name: Build & release Godot Game
 
 on:
   push:
@@ -39,7 +39,10 @@ jobs:
     - name: Create release
       uses: ncipollo/release-action@v1.14.0
       with:
+        name: "StarJump ${{ github.ref_name }}"
+        body: "Supports Windows only. Linux & MacOS support *may* come at a later date."
         token: ${{ secrets.GITHUB_TOKEN }}
         generateReleaseNotes: true
         tag: ${{ github.ref_name }}
         artifacts: ${{ steps.export.outputs.build_directory }}/*
+        draft: true
