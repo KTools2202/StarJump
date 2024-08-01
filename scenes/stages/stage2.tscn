@@ -1,0 +1,299 @@
+[gd_scene load_steps=29 format=3 uid="uid://dvanpqruglgkd"]
+
+[ext_resource type="Texture2D" uid="uid://ceo8fmyqrium1" path="res://sprites/Stars sheet.png" id="1_uk30u"]
+[ext_resource type="Script" path="res://scripts/Starry background.gd" id="2_6xdch"]
+[ext_resource type="AudioStream" uid="uid://dfaswthopohch" path="res://audio/The Journey (final ver.).mp3" id="3_0g6qg"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="4_n20oe"]
+[ext_resource type="Texture2D" uid="uid://dhgvwxivav0sa" path="res://sprites/Astronaut Sprite 1 fire.png" id="5_hgogw"]
+[ext_resource type="Script" path="res://scripts/Stage2/Clue1.gd" id="6_8v7fc"]
+[ext_resource type="Texture2D" uid="uid://dxr0ynox11apr" path="res://sprites/sun star icon.png" id="7_0r5pq"]
+[ext_resource type="Texture2D" uid="uid://chprpjr43mx04" path="res://sprites/Polaris.png" id="7_ec3y8"]
+[ext_resource type="Script" path="res://scripts/Stage2/Clue2.gd" id="8_i7dl7"]
+[ext_resource type="Script" path="res://scripts/Stage2/Clue3.gd" id="9_c5eqc"]
+[ext_resource type="Script" path="res://scripts/Stage2/Clue4.gd" id="10_wpwbu"]
+[ext_resource type="Script" path="res://scripts/Stage2/Clue5.gd" id="11_rlvsd"]
+[ext_resource type="Script" path="res://scripts/Stage2/AnswerGUI.gd" id="12_o6d3n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fy8c"]
+atlas = ExtResource("1_uk30u")
+region = Rect2(0, 0, 640, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvvmv"]
+atlas = ExtResource("1_uk30u")
+region = Rect2(640, 0, 640, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byc1j"]
+atlas = ExtResource("1_uk30u")
+region = Rect2(1280, 0, 640, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3keh"]
+atlas = ExtResource("1_uk30u")
+region = Rect2(0, 320, 640, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn0gr"]
+atlas = ExtResource("1_uk30u")
+region = Rect2(640, 320, 640, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yg5i2"]
+atlas = ExtResource("1_uk30u")
+region = Rect2(1280, 320, 640, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5ugd"]
+atlas = ExtResource("1_uk30u")
+region = Rect2(0, 640, 640, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uwnlw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fy8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvvmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byc1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3keh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jn0gr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yg5i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5ugd")
+}],
+"loop": true,
+"name": &"stars",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3myi4"]
+size = Vector2(138, 151)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_agvig"]
+radius = 31.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wofwh"]
+radius = 36.0555
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rrcl"]
+radius = 41.3038
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eo4rb"]
+radius = 35.5106
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ohvj2"]
+radius = 39.4588
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmj16"]
+size = Vector2(42, 648)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Starry background" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 324.5)
+scale = Vector2(1.8, 2.02188)
+sprite_frames = SubResource("SpriteFrames_uwnlw")
+animation = &"stars"
+frame = 6
+script = ExtResource("2_6xdch")
+
+[node name="Background" type="AudioStreamPlayer" parent="Starry background"]
+stream = ExtResource("3_0g6qg")
+autoplay = true
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+script = ExtResource("4_n20oe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(1003, 509.5)
+shape = SubResource("RectangleShape2D_3myi4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(1003, 509.476)
+scale = Vector2(0.460317, 0.460317)
+texture = ExtResource("5_hgogw")
+
+[node name="Clue1" type="Area2D" parent="."]
+position = Vector2(198, 31)
+script = ExtResource("6_8v7fc")
+
+[node name="SunStarIcon" type="Sprite2D" parent="Clue1"]
+position = Vector2(36, 43)
+texture = ExtResource("7_0r5pq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue1"]
+position = Vector2(37, 40)
+shape = SubResource("CircleShape2D_agvig")
+
+[node name="Polaris" type="Sprite2D" parent="Clue1"]
+position = Vector2(139, 40)
+texture = ExtResource("7_ec3y8")
+
+[node name="Clue2" type="Area2D" parent="."]
+position = Vector2(549, 75)
+script = ExtResource("8_i7dl7")
+
+[node name="SunStarIcon2" type="Sprite2D" parent="Clue2"]
+position = Vector2(55, 18)
+texture = ExtResource("7_0r5pq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue2"]
+position = Vector2(54, 18)
+shape = SubResource("CircleShape2D_wofwh")
+
+[node name="Label" type="Label" parent="Clue2"]
+offset_left = 94.0
+offset_top = 5.0
+offset_right = 134.0
+offset_bottom = 28.0
+
+[node name="Clue3" type="Area2D" parent="."]
+position = Vector2(296, 468)
+script = ExtResource("9_c5eqc")
+
+[node name="SunStarIcon3" type="Sprite2D" parent="Clue3"]
+position = Vector2(43, 47)
+texture = ExtResource("7_0r5pq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue3"]
+position = Vector2(44, 44)
+shape = SubResource("CircleShape2D_3rrcl")
+
+[node name="Label" type="Label" parent="Clue3"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Clue4" type="Area2D" parent="."]
+position = Vector2(718, 461)
+script = ExtResource("10_wpwbu")
+
+[node name="SunStarIcon4" type="Sprite2D" parent="Clue4"]
+position = Vector2(57, 41)
+texture = ExtResource("7_0r5pq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue4"]
+position = Vector2(55, 38)
+shape = SubResource("CircleShape2D_eo4rb")
+
+[node name="Label" type="Label" parent="Clue4"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Clue5" type="Area2D" parent="."]
+position = Vector2(945, 57)
+script = ExtResource("11_rlvsd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clue5"]
+position = Vector2(46, 23)
+shape = SubResource("CircleShape2D_ohvj2")
+
+[node name="Label" type="Label" parent="Clue5"]
+offset_left = -37.0
+offset_top = 72.0
+offset_right = 3.0
+offset_bottom = 95.0
+
+[node name="SunStarIcon5" type="Sprite2D" parent="Clue5"]
+position = Vector2(49, 25)
+texture = ExtResource("7_0r5pq")
+
+[node name="answer" type="Area2D" parent="."]
+position = Vector2(37, 240)
+script = ExtResource("12_o6d3n")
+
+[node name="SunStarIcon" type="Sprite2D" parent="answer"]
+position = Vector2(-15, 85)
+texture = ExtResource("7_0r5pq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="answer"]
+position = Vector2(-16, 84)
+shape = SubResource("RectangleShape2D_wmj16")
+
+[node name="Panel" type="Panel" parent="answer"]
+offset_left = 42.0
+offset_top = -221.0
+offset_right = 1039.0
+offset_bottom = 396.0
+
+[node name="Label" type="Label" parent="answer/Panel"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 27.0
+offset_right = 789.0
+offset_bottom = 125.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Body" type="Label" parent="answer/Panel"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 132.0
+offset_right = 981.0
+offset_bottom = 417.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ans1" type="Button" parent="answer/Panel"]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 544.0
+offset_right = 747.0
+offset_bottom = 602.0
+text = "Polaris"
+
+[node name="Ans2" type="Button" parent="answer/Panel"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 542.0
+offset_right = 453.0
+offset_bottom = 600.0
+text = "Baekdu"
+
+[node name="Ans3" type="Button" parent="answer/Panel"]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 456.0
+offset_right = 744.0
+offset_bottom = 514.0
+text = "Acubens"
+
+[node name="Ans4" type="Button" parent="answer/Panel"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 456.0
+offset_right = 456.0
+offset_bottom = 514.0
+text = "Achbird"
+
+[node name="Return" type="Button" parent="answer/Panel"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 330.0
+offset_right = 562.0
+offset_bottom = 416.0
+text = "Return to cockpit!"
+
+[connection signal="finished" from="Starry background/Background" to="Starry background" method="_on_background_finished"]
+[connection signal="body_entered" from="Clue1" to="Clue1" method="_on_body_entered"]
+[connection signal="body_exited" from="Clue1" to="Clue1" method="_on_body_exited"]
+[connection signal="body_entered" from="Clue2" to="Clue2" method="_on_body_entered"]
+[connection signal="body_exited" from="Clue2" to="Clue2" method="_on_body_exited"]
+[connection signal="body_entered" from="Clue3" to="Clue3" method="_on_body_entered"]
+[connection signal="body_exited" from="Clue3" to="Clue3" method="_on_body_exited"]
+[connection signal="body_entered" from="Clue4" to="Clue4" method="_on_body_entered"]
+[connection signal="body_exited" from="Clue4" to="Clue4" method="_on_body_exited"]
+[connection signal="body_entered" from="Clue5" to="Clue5" method="_on_body_entered"]
+[connection signal="body_exited" from="Clue5" to="Clue5" method="_on_body_exited"]
+[connection signal="body_entered" from="answer" to="answer" method="_on_body_entered"]
+[connection signal="body_exited" from="answer" to="answer" method="_on_body_exited"]
+[connection signal="pressed" from="answer/Panel/Ans1" to="answer" method="_on_ans_1_pressed"]
+[connection signal="pressed" from="answer/Panel/Ans2" to="answer" method="_on_ans_2_pressed"]
+[connection signal="pressed" from="answer/Panel/Ans3" to="answer" method="_on_ans_3_pressed"]
+[connection signal="pressed" from="answer/Panel/Ans4" to="Starry background" method="_on_ans_4_pressed"]
+[connection signal="pressed" from="answer/Panel/Ans4" to="answer" method="_on_ans_4_pressed"]
+[connection signal="pressed" from="answer/Panel/Return" to="answer" method="_on_return_pressed"]

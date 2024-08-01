@@ -1,0 +1,4 @@
+{
+    "recommendations": ["alfish.godot-files", "geequlim.godot-tools", "esbenp.prettier-vscode", "ms-vscode.remote-repositories", "github.remotehub", "donjayamanne.githist"],
+    "unwantedRecommendations": []
+}

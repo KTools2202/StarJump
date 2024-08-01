@@ -2,9 +2,14 @@
 .godot/
 # Python files (used to work as a Python game)
 .py
-# Ignore VSCode settings for Godot EXE
-.vscode/settings.json
-# Ignore imports
+# ignore work in progress sprites
+*.psd
+*.aseprite
+# Import file ignores
 *.import
-# Ignore test builds
+# Godot EXE path ignore for VSCode
+.vscode/settings.json
+# If someone decides to place the Godot exe in "for convenience" I suppose
+*Godot*.exe
+# Test Build Files
 [Bb]uild/*
