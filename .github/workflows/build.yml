@@ -1,9 +1,9 @@
 name: Build Godot Game
 
-on: 
+on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
       - "scenes/**"
       - "scripts/**"
@@ -14,7 +14,7 @@ on:
       #- "ans/answers.json"
       # Uncomment when we get to this stage.
   pull_request:
-    branches: [ main ]
+    branches: [main]
     paths:
       - "scenes/**"
       - "scripts/**"
@@ -24,7 +24,7 @@ on:
       - "export_presets.cfg"
       #- "ans/answers.json"
       # Uncomment when we get to this stage.
-  
+
 permissions:
   contents: read
 
@@ -32,27 +32,43 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    
-    - name: Install Wine for Windows EXE logo
-      id: wine_install
-      run: |
-        sudo apt install wine64
-        echo "WINE_PATH=$(which wine64)" >> $GITHUB_OUTPUT
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Export Godot project
-      id: export
-      uses: firebelley/godot-export@v5.2.1
-      with:
-        godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.0/Godot_v4.0-stable_linux.x86_64.zip
-        godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.0/Godot_v4.0-stable_export_templates.tpz
-        relative_project_path: '.'
-        wine_path: ${{ steps.wine_install.outputs.WINE_PATH }}
-        archive_output: true
-    
-    - name: Upload archives
-      uses: actions/upload-artifact@v4
-      with:
-        name: StarJump archives
-        path: ${{ steps.export.outputs.archive_directory }}/*
+      - name: Install Wine for Windows EXE logo
+        id: wine_install
+        run: |
+          sudo apt install wine64
+          echo "WINE_PATH=$(which wine64)" >> $GITHUB_OUTPUT
+
+      - name: Export Godot project
+        id: export-normal
+        uses: firebelley/godot-export@v5.2.1
+        with:
+          godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.0/Godot_v4.0-stable_linux.x86_64.zip
+          godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.0/Godot_v4.0-stable_export_templates.tpz
+          relative_project_path: "."
+          wine_path: ${{ steps.wine_install.outputs.WINE_PATH }}
+          archive_output: true
+
+      - name: Export debug version
+        id: export-debug
+        uses: firebelley/godot-export@v5.2.1
+        with:
+          export_debug: true
+          godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.0/Godot_v4.0-stable_linux.x86_64.zip
+          godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.0/Godot_v4.0-stable_export_templates.tpz
+          relative_project_path: "."
+          wine_path: ${{ steps.wine_install.outputs.WINE_PATH }}
+          archive_output: true
+
+      - name: Upload archives
+        uses: actions/upload-artifact@v4
+        with:
+          name: StarJump archives
+          path: ${{ steps.export-normal.outputs.archive_directory }}/*
+      - name: Upload debug archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: StarJump Debug archives
+          path: ${{ steps.export-debug.outputs.archive_directory }}/*
